@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesWatchlist.Domain", "MoviesWatchlist.Domain\MoviesWatchlist.Domain.csproj", "{401302BB-C641-4431-B127-F30B09491B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesWatchlist.Persistence", "MoviesWatchlist.Persistence\MoviesWatchlist.Persistence.csproj", "{14BA4C74-547C-4E6D-A5C0-770071D1F7C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesWatchlist.Service", "MoviesWatchlist.Service\MoviesWatchlist.Service.csproj", "{0AB8F9CC-A8D2-4FCB-86AD-89102F63247C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesWatchlist.API", "MoviesWatchlist.API\MoviesWatchlist.API.csproj", "{13727DA1-23D2-47D2-891C-F9280920E9C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{401302BB-C641-4431-B127-F30B09491B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401302BB-C641-4431-B127-F30B09491B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401302BB-C641-4431-B127-F30B09491B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401302BB-C641-4431-B127-F30B09491B00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14BA4C74-547C-4E6D-A5C0-770071D1F7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BA4C74-547C-4E6D-A5C0-770071D1F7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BA4C74-547C-4E6D-A5C0-770071D1F7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BA4C74-547C-4E6D-A5C0-770071D1F7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB8F9CC-A8D2-4FCB-86AD-89102F63247C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB8F9CC-A8D2-4FCB-86AD-89102F63247C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB8F9CC-A8D2-4FCB-86AD-89102F63247C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB8F9CC-A8D2-4FCB-86AD-89102F63247C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13727DA1-23D2-47D2-891C-F9280920E9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13727DA1-23D2-47D2-891C-F9280920E9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13727DA1-23D2-47D2-891C-F9280920E9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13727DA1-23D2-47D2-891C-F9280920E9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
