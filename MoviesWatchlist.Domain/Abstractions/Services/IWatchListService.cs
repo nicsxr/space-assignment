@@ -5,6 +5,8 @@ namespace MoviesWatchlist.Domain.Abstractions.Services;
 
 public interface IWatchListService
 {
-    Task<MovieItem> AddMovie(int userId, string movieId);
+    Task<bool> AddMovie(int userId, string movieId);
     Task<List<MovieItem>> GetWatchlistMovies(int userId);
+
+    Task<bool> MarkAsWatched(int userId, string movieId);
 }

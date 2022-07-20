@@ -1,5 +1,7 @@
+using AutoMapper;
 using MoviesWatchlist.Domain.Abstractions.Repositories;
 using MoviesWatchlist.Domain.Abstractions.Services;
+using MoviesWatchlist.Domain.Entities;
 using MoviesWatchlist.Domain.Models;
 
 namespace MoviesWatchlist.Service;
@@ -7,23 +9,31 @@ namespace MoviesWatchlist.Service;
 public class WatchListService : IWatchListService
 {
     private readonly IWatchListItemRepository _repo;
+    private readonly IMapper _mapper;
 
-    public WatchListService(IWatchListItemRepository repo)
+    public WatchListService(IWatchListItemRepository repo, IMapper mapper)
     {
         _repo = repo;
+        _mapper = mapper;
     }
     
-    public Task<MovieItem> AddMovie(int userId, string movieId)
+    public async Task<bool> AddMovie(int userId, string movieId)
     {
-        // TODO: MAPPER IMPLEMENTATION
-        var movie = new MovieItem() { UserId = userId, MovieId = movieId };
-        _repo.Insert(userId, movieId);
-        
-        return Task.FromResult(movie);
+        return await _repo.Insert(userId, movieId);
     }
 
-    public Task<List<MovieItem>> GetWatchlistMovies(int userId)
+    public async Task<List<MovieItem>> GetWatchlistMovies(int userId)
     {
-        throw new NotImplementedException();
+        var movies = await _repo.Get(userId);
+        
+        return _mapper.Map<List<WatchListItem>, List<MovieItem>>(movies);
+    }
+
+    public async Task<bool> MarkAsWatched(int userId, string movieId)
+    {
+        var movies = await _repo.Get(userId);
+        var movie = movies.Find(x => x.MovieId == movieId);
+        if (movie != null) movie.IsWatched = true;
+        return await _repo.MarkAsWatched(userId, movieId);
     }
 }
