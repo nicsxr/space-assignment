@@ -29,8 +29,6 @@ public class NotificationSender : INotificationSender
         
         foreach (var userMovie in userMovies)
         {
-            if (!userMovie.MovieIds.Any()) continue;
-            
             MovieDetailsResponse movie = new();
 
             float highestRating = 0;

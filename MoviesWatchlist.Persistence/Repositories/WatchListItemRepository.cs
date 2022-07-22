@@ -69,7 +69,9 @@ public class WatchListItemRepository : IWatchListItemRepository
                 .Select(item => item.MovieId)
                 .ToList(),
         }).ToList();
-        
+
+        unwatchedMovies.RemoveAll(m => !m.MovieIds.Any());
+
         return unwatchedMovies;
     }
 
