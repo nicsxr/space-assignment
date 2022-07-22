@@ -32,7 +32,7 @@ public class ErrorController : Controller
             HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
         return Problem(
-            // detail: exceptionHandlerFeature.Error.StackTrace,
+            detail: exceptionHandlerFeature.Error.StackTrace,
             title: exceptionHandlerFeature.Error.Message);
     }
 

@@ -86,6 +86,6 @@ app.UseHangfireDashboard("/dashboard");
 
 RecurringJob.AddOrUpdate("Send Emails to users", () => 
         builder.Services.BuildServiceProvider().GetService<INotificationSender>()!.SendNotifications(),
-    "*/10 * * * * *");
+    "0 30 19 * * SUN", TimeZoneInfo.Local);
 
 app.Run();
