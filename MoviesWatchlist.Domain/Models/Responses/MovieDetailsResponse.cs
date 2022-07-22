@@ -91,7 +91,7 @@ public class MovieDetailsResponse
     public string Languages { get; set; }
     public List<LanguageList> LanguageList { get; set; }
     public string ContentRating { get; set; }
-    public string ImDbRating { get; set; }
+    public string? ImDbRating { get; set; }
     public string ImDbRatingVotes { get; set; }
     public string MetacriticRating { get; set; }
     public object Ratings { get; set; }

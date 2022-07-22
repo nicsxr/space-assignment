@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
+      <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MoviesWatchlist.Domain\MoviesWatchlist.Domain.csproj" />
+      <ProjectReference Include="..\MoviesWatchlist.EmailService\MoviesWatchlist.EmailService.csproj" />
+    </ItemGroup>
+
+</Project>

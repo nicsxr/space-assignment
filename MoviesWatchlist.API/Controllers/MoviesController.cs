@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using MoviesWatchlist.Domain.Abstractions.Infrastructure;
 using MoviesWatchlist.Domain.Models;
 using MoviesWatchlist.Domain.Models.Requests;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MoviesWatchlist.API.Controllers;
 
@@ -15,8 +16,10 @@ public class MoviesController : Controller
     {
         _service = service;
     }
-
+    
     [HttpGet]
+    [SwaggerOperation(Summary = "Search movies.", Description = "Searches IMDB database for movies by keyword.")]
+    [ProducesResponseType(typeof(SearchMoviesResponse), 200)]
     [Route("search")]
     public async Task<SearchMoviesResponse> SearchMovie([FromQuery] SearchMoviesRequest searchMoviesRequest)
     {
@@ -24,6 +27,8 @@ public class MoviesController : Controller
     }
     
     [HttpGet]
+    [SwaggerOperation(Summary = "Get movie details.", Description = "Get movie details by providing movie ID.")]
+    [ProducesResponseType(typeof(MovieDetailsResponse), 200)]
     [Route("details")]
     public async Task<MovieDetailsResponse> Details([FromQuery] MovieDetailsRequest movieDetailsRequest)
     {

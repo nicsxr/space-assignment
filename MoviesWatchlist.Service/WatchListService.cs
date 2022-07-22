@@ -29,6 +29,13 @@ public class WatchListService : IWatchListService
         return _mapper.Map<List<WatchListItem>, List<MovieItem>>(movies);
     }
 
+    public async Task<List<MovieItem>> GetUnwatchedMovies(int userId)
+    {
+        var movies = await _repo.GetUserUnwatchedMovies(userId);
+        
+        return _mapper.Map<List<WatchListItem>, List<MovieItem>>(movies);
+    }
+
     public async Task<bool> MarkAsWatched(int userId, string movieId)
     {
         var movies = await _repo.Get(userId);

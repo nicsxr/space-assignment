@@ -8,17 +8,22 @@
 
     <ItemGroup>
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.2" />
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.7.30" />
+        <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0-preview.5.22302.2">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\MoviesWatchlist.Domain\MoviesWatchlist.Domain.csproj" />
+      <ProjectReference Include="..\MoviesWatchlist.EmailService\MoviesWatchlist.EmailService.csproj" />
       <ProjectReference Include="..\MoviesWatchlist.Infrastructure\MoviesWatchlist.Infrastructure.csproj" />
       <ProjectReference Include="..\MoviesWatchlist.Persistence\MoviesWatchlist.Persistence.csproj" />
+      <ProjectReference Include="..\MoviesWatchlist.ScheduledService\MoviesWatchlist.ScheduledService.csproj" />
       <ProjectReference Include="..\MoviesWatchlist.Service\MoviesWatchlist.Service.csproj" />
     </ItemGroup>
 
