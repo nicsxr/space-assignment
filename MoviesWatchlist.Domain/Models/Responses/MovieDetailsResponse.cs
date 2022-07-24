@@ -25,7 +25,7 @@ public class MovieDetailsResponse
     public string Countries { get; set; }
     public string Languages { get; set; }
     public string ContentRating { get; set; }
-    public string ImDbRating { get; set; }
+    public string ImDbRating { get; set; } = "0";
     public string ImDbRatingVotes { get; set; }
     public string MetacriticRating { get; set; }
     public object Ratings { get; set; }

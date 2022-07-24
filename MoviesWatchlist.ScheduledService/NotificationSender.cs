@@ -35,10 +35,9 @@ public class NotificationSender : INotificationSender
             {
                 string[] options = Array.Empty<string>();
                 MovieDetailsResponse details = await _movieApi.Details(movieId, options);
-                
 
-                float imdbRating = details.ImDbRating != null ? float.Parse(details.ImDbRating, 
-                    CultureInfo.InvariantCulture.NumberFormat) : 0;
+
+                float imdbRating = float.Parse(details.ImDbRating, CultureInfo.InvariantCulture.NumberFormat);
                 
                 if (imdbRating > highestRating)
                 {
