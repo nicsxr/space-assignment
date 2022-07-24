@@ -24,9 +24,7 @@ public class NotificationSender : INotificationSender
     public async Task SendNotifications()
     {
         var userMovies = await _repo.GetUnwatchedMovies();
-        
-        if (userMovies.Count == 0) return;
-        
+
         foreach (var userMovie in userMovies)
         {
             MovieDetailsResponse movie = new();
