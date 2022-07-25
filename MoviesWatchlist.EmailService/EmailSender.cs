@@ -12,8 +12,8 @@ public class EmailSender : IEmailSender
     {
         _emailConfig = emailConfig;
     }
-    
-    public async Task SendEmail(string body, string receiver) // default email
+
+    private MimeMessage CreateMimeMessage(string body, string receiver)
     {
         var email = new MimeMessage();
 
@@ -21,6 +21,13 @@ public class EmailSender : IEmailSender
         email.To.Add(MailboxAddress.Parse(receiver));
         email.Subject = "Unwatched movie reminder";
         email.Body = new BodyBuilder { HtmlBody = body }.ToMessageBody();
+
+        return email;
+    }
+    
+    public async Task SendEmail(string body, string receiver) // default email
+    {
+        var email = CreateMimeMessage(body, receiver);
 
         using var smtp = new SmtpClient();
         await smtp.ConnectAsync(_emailConfig.SmtpServer, _emailConfig.Port, SecureSocketOptions.StartTls);
